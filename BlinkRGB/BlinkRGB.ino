@@ -27,7 +27,7 @@ void setup() {
 // the loop function runs over and over again forever
 void loop() {
 #ifdef RGB_BUILTIN
-  Serial.println("Wite");
+  Serial.println("White");
   neopixelWrite(RGB_BUILTIN, RGB_BRIGHTNESS, RGB_BRIGHTNESS, RGB_BRIGHTNESS); // White
   delay(1000);
   Serial.println("Red");
