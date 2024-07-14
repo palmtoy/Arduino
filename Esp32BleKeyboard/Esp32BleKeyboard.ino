@@ -18,8 +18,6 @@ bool isOn = false;
 void setup() {
   //start serial connection
   Serial.begin(9600);
-  Serial.println("Starting ESP32 Keyboard ...");
-  bleKeyboard.begin();
   //configure pinButton as an input and enable the internal pull-up resistor
   pinMode(pinButton, INPUT_PULLUP);
   // if analog input pin 0 is unconnected, random analog
@@ -27,6 +25,14 @@ void setup() {
   // different seed numbers each time the sketch runs.
   // randomSeed() will then shuffle the random function.
   randomSeed(analogRead(0));
+  Serial.println("Starting ESP32 Keyboard ...");
+  bleKeyboard.begin();
+  while (!bleKeyboard.isConnected()) {
+      Serial.print(".");
+      delay(1000);
+  }
+  Serial.println();
+  Serial.println("ESP32 Keyboard connected.");
 }
 
 long getBrightness() {
