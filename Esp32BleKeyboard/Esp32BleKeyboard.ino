@@ -7,7 +7,7 @@ BleKeyboard bleKeyboard;
 
 #define MAX_BRIGHTNESS 10
 const int pinButton = 9;  // the number of the pushbutton pin (the boot button)
-const int pinLED = 10;  // the number of the LED pin
+const int pinLED = 8;  // the number of the LED pin
 long rBrightness = 0;  // red brightness (max 255)
 long gBrightness = 0;  // green brightness (max 255)
 long bBrightness = 0;  // blue brightness (max 255)
